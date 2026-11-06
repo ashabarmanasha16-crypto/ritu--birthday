@@ -1,127 +1,226 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ff7eb6">
-<title>Ritu's Little Universe 💗</title>
+<title>Ritu's Little Universe ❤️</title>
+
 <style>
-:root{--pink:#ff5fa2;--deep:#a82d70;--cream:#fff7fb}
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#53213c;background:linear-gradient(135deg,#fff0f7,#ffe0ef 55%,#fff8fc);overflow-x:hidden}
-button{font:inherit;cursor:pointer;border:0;border-radius:999px;padding:12px 20px;background:var(--pink);color:white;font-weight:700;box-shadow:0 8px 20px #e85b9a33}
-button:active{transform:scale(.97)}
-main{max-width:850px;margin:auto;padding:22px 16px 60px}
-.hero{text-align:center;min-height:78vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
-.kicker{letter-spacing:3px;text-transform:uppercase;font-size:.72rem;color:#b34b80;font-weight:800}
-h1{font-family:Georgia,serif;font-size:clamp(2.5rem,11vw,5rem);line-height:1.02;margin:14px 0;color:var(--deep)}
-.sub{font-size:1.05rem;max-width:520px;line-height:1.7;color:#80506a}
-.section{margin:28px 0;padding:22px;background:#ffffffb8;border:1px solid #fff;border-radius:25px;box-shadow:0 14px 35px #b94b7b12}
-h2{font-family:Georgia,serif;color:var(--deep);font-size:2rem;margin:0 0 12px}
-.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.photo{aspect-ratio:4/5;border-radius:17px;overflow:hidden;background:linear-gradient(145deg,#ffd5e8,#fff0f7);display:flex;align-items:center;justify-content:center;color:#a34c78;text-align:center;padding:10px}
-.photo img{width:100%;height:100%;object-fit:cover;display:block}
-.envelope-wrap{text-align:center;padding:16px 0}
-.envelope{font-size:4rem;cursor:pointer;display:inline-block;transition:transform .3s}
-.envelope:hover{transform:translateY(-5px) rotate(-4deg)}
-.letter{display:none;text-align:left;background:#fff9fc;border:1px solid #ffd1e5;border-radius:18px;padding:20px;line-height:1.8;white-space:pre-line}
-.letter.show{display:block;animation:pop .4s ease}
-.surprises{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.surprise{background:#fff0f7;border:1px solid #ffd1e5;color:#9c376a;box-shadow:none;border-radius:16px;min-height:65px}
-#message{min-height:30px;text-align:center;font-weight:700;color:#a82d70;margin-top:12px}
-footer{text-align:center;color:#9a6680;padding:25px 0}
-.heart{position:fixed;bottom:-30px;pointer-events:none;animation:float 7s linear forwards;z-index:0}
-@keyframes float{to{transform:translateY(-110vh) rotate(35deg);opacity:0}}
-@keyframes pop{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-@media(min-width:600px){.gallery{grid-template-columns:repeat(3,1fr)}.section{padding:28px}.surprises{grid-template-columns:repeat(4,1fr)}}
+body{
+  margin:0;
+  font-family:Georgia,serif;
+  background:linear-gradient(135deg,#ffe1ed,#fff0f5,#f9d6e5);
+  color:#74364f;
+  text-align:center;
+  overflow-x:hidden;
+}
+section{padding:55px 18px}
+h1{font-size:2.5rem;color:#bd4777}
+h2{color:#bd4777}
+p{line-height:1.8}
+button{
+  border:0;border-radius:30px;padding:14px 25px;
+  background:#d6538b;color:white;font-size:16px;
+  margin:10px;cursor:pointer;
+}
+button:active{transform:scale(.96)}
+.hero{min-height:100vh;display:flex;flex-direction:column;
+justify-content:center;align-items:center}
+.card{
+  max-width:650px;margin:20px auto;padding:25px;
+  background:#ffffffb8;border-radius:22px;
+  box-shadow:0 8px 25px #b85a7930;
+}
+.gallery{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:12px;max-width:700px;margin:auto;
+}
+.photo{
+  height:220px;border-radius:16px;overflow:hidden;
+  background:#f6c8db;display:flex;
+  align-items:center;justify-content:center;
+}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo span{font-size:13px;padding:10px}
+.letter{
+  display:none;text-align:left;white-space:pre-line;
+  line-height:1.9;
+}
+.heart{
+  position:fixed;bottom:-30px;animation:float 7s linear infinite;
+  pointer-events:none;z-index:-1;
+}
+@keyframes float{
+  to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+#surprise{display:none}
+@media(max-width:420px){
+  h1{font-size:2rem}
+  .photo{height:170px}
+}
 </style>
 </head>
+
 <body>
-<main>
+
 <section class="hero">
-  <div class="kicker">A little corner of the internet, made for you</div>
-  <h1>Ritu's Little<br>Universe 💗</h1>
-  <p class="sub">Today, the world gets a little brighter because it's your day. This tiny website is made to celebrate you.</p>
-  <button onclick="document.getElementById('memories').scrollIntoView({behavior:'smooth'})">Explore your surprise ✨</button>
+  <div style="font-size:55px">🎀</div>
+  <h1>Ritu's Little Universe</h1>
+  <p>A little world made specially for you ❤️</p>
+  <button onclick="document.getElementById('welcome').scrollIntoView({behavior:'smooth'})">
+    Open Your Surprise ✨
+  </button>
 </section>
 
-<section class="section" id="memories">
-  <h2>Little moments, big smiles</h2>
-  <p class="sub">A gallery of your favourite memories. Add your photos in the <b>photos</b> folder using the names shown below.</p>
+<section id="welcome">
+  <h1>Happy Birthday, Ritu! 💗</h1>
+  <div class="card">
+    <h2>Today is all about you!</h2>
+    <p>
+      A special day deserves a special little surprise.
+      So here's a tiny corner of the internet,
+      created just to celebrate you.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Little Moments 📸</h2>
+  <p>Five memories, one special gallery.</p>
+
   <div class="gallery" id="gallery"></div>
 </section>
 
-<section class="section">
-  <h2>A letter for you 💌</h2>
-  <div class="envelope-wrap">
-    <div class="envelope" role="button" tabindex="0" onclick="openLetter()" onkeydown="if(event.key==='Enter')openLetter()">💌</div>
-    <p>Tap the envelope to open your birthday letter.</p>
-  </div>
-  <div class="letter" id="letter">Dear Ritu,
+<section>
+  <h2>A Little Letter 💌</h2>
+  <div class="card">
+    <div style="font-size:55px">✉️</div>
+    <p>There's a little letter waiting for you.</p>
+    <button onclick="openLetter()">Open Letter</button>
+    <div class="letter" id="letter">
+Dear Ritu,
 
-Happy Birthday! 💗
+Happy Birthday! ❤️
 
-I hope your day is filled with laughter, lovely surprises, and all the little things that make you happy.
+I hope your day is filled with happiness,
+laughter, beautiful memories and countless
+reasons to smile.
 
-You deserve kindness, confidence, exciting new memories, and countless reasons to smile. Keep being your wonderful self, keep chasing your dreams, and never forget how special you are.
+You deserve all the good things life has
+to offer. Keep being yourself, keep chasing
+your dreams and never stop shining.
 
-May this new year of your life bring you happiness, success, and beautiful moments.
+May this new year of your life bring you
+wonderful surprises and unforgettable moments.
 
 Have the most amazing birthday!
 
-With lots of warm wishes,
-Someone who wanted to make your day extra special ✨</div>
-</section>
-
-<section class="section">
-  <h2>Secret little surprises 🎀</h2>
-  <p class="sub">Tap each one to reveal a tiny message.</p>
-  <div class="surprises">
-    <button class="surprise" onclick="reveal(0)">Surprise 1</button>
-    <button class="surprise" onclick="reveal(1)">Surprise 2</button>
-    <button class="surprise" onclick="reveal(2)">Surprise 3</button>
-    <button class="surprise" onclick="reveal(3)">Surprise 4</button>
+With lots of best wishes,
+Someone who made this little universe for you. ❤️
+    </div>
   </div>
-  <div id="message"></div>
 </section>
 
-<section class="section" style="text-align:center">
-  <h2>One last birthday wish 🎉</h2>
-  <p class="sub">Ready for the final surprise?</p>
-  <button onclick="celebrate()">Make a wish ✨</button>
-  <div id="finale" style="font-size:1.4rem;font-weight:800;color:#a82d70;margin-top:15px"></div>
+<section>
+  <h2>One Last Surprise 🎁</h2>
+  <button onclick="showSurprise()">Tap for a Surprise</button>
+  <div class="card" id="surprise">
+    <h2>You are special! 🌷</h2>
+    <p>Never forget how wonderful and unique you are.</p>
+    <h1>Keep Shining! ✨</h1>
+  </div>
 </section>
-<footer>Made with care, just for Ritu 💗</footer>
-</main>
-<audio id="music" src="music/birthday.mp3" loop></audio>
+
+<section>
+  <h2>Made with ❤️</h2>
+  <p>For Ritu — Happy Birthday!</p>
+  <button onclick="celebrate()">Celebrate 🎉</button>
+</section>
+
+<audio id="music" loop>
+  <source src="music/birthday.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="toggleMusic()" style="position:fixed;bottom:12px;right:8px">
+  🎵 Music
+</button>
+
 <script>
-const gallery=document.getElementById('gallery');
-for(let i=1;i<=12;i++){
- const box=document.createElement('div');box.className='photo';
- const img=document.createElement('img');img.src=`photos/${[
-'IMG-20261104-WA0012.jpg',
-'IMG-20261104-WA0014.jpg',
-'IMG-20261105-WA0013.jpg',
-'IMG-20261105-WA0014.jpg',
-'IMG-20261105-WA0015.jpg'
-][i-1]}`;`Ritu photo ${i}`;
- img.onerror=()=>{box.innerHTML=`<span>Add photo<br><b>ritu${i}.jpg</b></span>`};
- box.appendChild(img);gallery.appendChild(box);
-}
-function openLetter(){document.getElementById('letter').classList.toggle('show')}
-const messages=[
- "Your smile can make an ordinary day feel special. 💗",
- "Keep shining and doing things that make you happy. ✨",
- "You deserve all the good things coming your way. 🎀",
- "Here's to more laughter, memories, and adventures! 🌷"
+const photos = [
+  "IMG-20261104-WA0012.jpg",
+  "IMG-20261104-WA0014.jpg",
+  "IMG-20261105-WA0013.jpg",
+  "IMG-20261105-WA0014.jpg",
+  "IMG-20261105-WA0015.jpg"
 ];
-function reveal(i){document.getElementById('message').textContent=messages[i]}
-function heart(){const h=document.createElement('div');h.className='heart';h.textContent=['💗','💕','✨','🌸'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(16+Math.random()*20)+'px';document.body.appendChild(h);setTimeout(()=>h.remove(),7200)}
-setInterval(heart,850);
-function celebrate(){
- document.getElementById('finale').textContent='Happy Birthday, Ritu! 🎂💖';
- for(let i=0;i<45;i++){setTimeout(()=>{const s=document.createElement('div');s.className='heart';s.textContent=['🎉','💖','✨','🎀'][Math.floor(Math.random()*4)];s.style.left=Math.random()*100+'vw';s.style.fontSize=(18+Math.random()*24)+'px';document.body.appendChild(s);setTimeout(()=>s.remove(),7200)},i*35)}
+
+const gallery = document.getElementById("gallery");
+
+photos.forEach((name,index)=>{
+  const box=document.createElement("div");
+  box.className="photo";
+
+  const img=document.createElement("img");
+  img.src="Photos/"+name;
+  img.alt="Ritu photo "+(index+1);
+
+  img.onerror=()=>{
+    box.innerHTML="<span>Photo not found:<br>"+name+"</span>";
+  };
+
+  box.appendChild(img);
+  gallery.appendChild(box);
+});
+
+function openLetter(){
+  const letter=document.getElementById("letter");
+  letter.style.display=letter.style.display==="block"?"none":"block";
 }
+
+function showSurprise(){
+  document.getElementById("surprise").style.display="block";
+  document.getElementById("surprise").scrollIntoView({behavior:"smooth"});
+  celebrate();
+}
+
+function toggleMusic(){
+  const music=document.getElementById("music");
+  if(music.paused) music.play();
+  else music.pause();
+}
+
+function celebrate(){
+  for(let i=0;i<45;i++){
+    const item=document.createElement("div");
+    item.textContent=["❤️","💗","✨","🎉","🌸"][Math.floor(Math.random()*5)];
+    item.style.position="fixed";
+    item.style.left=Math.random()*100+"vw";
+    item.style.top="-30px";
+    item.style.fontSize="24px";
+    item.style.zIndex="10";
+    item.style.transition="transform 3s linear,opacity 3s";
+    document.body.appendChild(item);
+
+    setTimeout(()=>{
+      item.style.transform="translateY(110vh) rotate(500deg)";
+      item.style.opacity="0";
+    },50);
+    setTimeout(()=>item.remove(),3200);
+  }
+}
+
+setInterval(()=>{
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.textContent="💗";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(5+Math.random()*4)+"s";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),9000);
+},900);
 </script>
+
 </body>
 </html>
