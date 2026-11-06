@@ -98,7 +98,13 @@ Someone who wanted to make your day extra special ✨</div>
 const gallery=document.getElementById('gallery');
 for(let i=1;i<=12;i++){
  const box=document.createElement('div');box.className='photo';
- const img=document.createElement('img');img.src=`photos/ritu${i}.jpg`;img.alt=`Ritu photo ${i}`;
+ const img=document.createElement('img');img.src=`photos/${[
+'IMG-20261104-WA0012.jpg',
+'IMG-20261104-WA0014.jpg',
+'IMG-20261105-WA0013.jpg',
+'IMG-20261105-WA0014.jpg',
+'IMG-20261105-WA0015.jpg'
+][i-1]}`;`Ritu photo ${i}`;
  img.onerror=()=>{box.innerHTML=`<span>Add photo<br><b>ritu${i}.jpg</b></span>`};
  box.appendChild(img);gallery.appendChild(box);
 }
